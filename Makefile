@@ -1,12 +1,12 @@
-NAME = phusion/baseimage
-VERSION = 0.9.18
+NAME = gasponet/baseimage
+VERSION = 0.0.1
 
 .PHONY: all build test tag_latest release ssh
 
 all: build
 
 build:
-	docker build -t $(NAME):$(VERSION) --rm image
+	docker build -t $(NAME):$(VERSION) --force-rm image
 
 test:
 	env NAME=$(NAME) VERSION=$(VERSION) ./test/runner.sh

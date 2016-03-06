@@ -1,11 +1,8 @@
-FROM ubuntu:14.04
-MAINTAINER Phusion <info@phusion.nl>
+FROM alpine:edge
+MAINTAINER Nick Gasparovich <nick@gasponet.com>
 
-ADD . /bd_build
+ADD . /build_scripts
 
-RUN /bd_build/prepare.sh && \
-	/bd_build/system_services.sh && \
-	/bd_build/utilities.sh && \
-	/bd_build/cleanup.sh
-
-CMD ["/sbin/my_init"]
+RUN /build_scripts/prepare.sh && \
+	/build_scripts/utilities.sh && \
+	/build_scripts/cleanup.sh
