@@ -4,8 +4,11 @@ source /build_scripts/buildconfig
 set -x
 
 ## Install init process.
-#cp /build_scripts/bin/my_init /sbin/
-#mkdir -p /etc/my_init.d
+cp /build_scripts/bin/my_init /sbin/
+mkdir -p /etc/my_init.d
+mkdir -p /etc/service
+mkdir -p /etc/default
+cp /build_scripts/default/* /etc/default
 #mkdir -p /etc/container_environment
 #touch /etc/container_environment.sh
 #touch /etc/container_environment.json
@@ -17,7 +20,7 @@ set -x
 #ln -s /etc/container_environment.sh /etc/profile.d/
 
 ## Install runit.
-#$apk_install runit
+$apk_install runit
 
 ## Install a syslog daemon and logrotate.
 #[ "$DISABLE_SYSLOG" -eq 0 ] && /build_scripts/services/syslog-ng/syslog-ng.sh || true

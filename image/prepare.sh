@@ -18,7 +18,7 @@ apk update
 apk upgrade
 
 ## Lets get core utilities
-$apk_install bash
+$apk_install bash shadow
 
 ## Replace the 'ischroot' tool to make it always return true.
 ## Prevent initscripts updates from breaking /dev/shm.
