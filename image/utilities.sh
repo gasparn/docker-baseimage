@@ -5,7 +5,7 @@ set -x
 
 ## Often used tools.
 #$apk_install curl less vim
-$apk_install less
+$apk_install less coreutils
 #ln -s /usr/bin/vim.tiny /usr/bin/vim
 
 ## This tool runs a command as another user and sets $HOME.
